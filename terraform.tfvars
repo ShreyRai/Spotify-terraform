@@ -1,0 +1,4 @@
+#api_key = "POXJIbOifOE4lUMNobVTHTxMTYB0UOKvutYeo4w7fRUnqqH4ZarvPiGJ08G6CEge"
+api_key = "MdaXl7hUe45fCf7XcB95xssNjMTNeYiPZJSQM0F07EblDOVWx46SEIEV3v3PgFwU"
+#spotify_client_id= "81462e2ed613455289793e5b8df000c3"
+#spotify_client_secret = "55114cbc076493f982dbf3186e7a3df"
