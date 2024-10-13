@@ -31,7 +31,7 @@ terraform {
 }
 
 provider "spotify" {
-   ##Configuration options##
+  //Configuration options
   api_key = <api_key_generated_in_step_3> <use variables> #
 }
 
