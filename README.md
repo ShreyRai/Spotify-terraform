@@ -1,7 +1,8 @@
-#Spotify Playlist using Terraform#
-Project 1 : Creating SPotify playlist using terraform
+#Spotify Playlist using Terraform
 
-Pre-requisite:
+#Project 1 : Creating SPotify playlist using terraform#
+
+#Pre-requisite:#
 1. Terraform Installed: Ensure Terraform is installed on your machine.
 2. Docker Installed: Make sure Docker is installed and running.
 3. Spotify Account: You need a Spotify account (without premium access)
@@ -9,7 +10,7 @@ Pre-requisite:
 5. Spotify Provider for Terraform: Install and configure the Spotify provider for Terraform.
 6. VS Code Editor: Recommended for editing Terraform files.
 
-Step1:
+#Step1:#
 Create a terraform folder and some files into it
 files should be:
 provider.tf
@@ -30,15 +31,15 @@ terraform {
 }
 
 provider "spotify" {
-  # Configuration options
+   ##Configuration options##
   api_key = <api_key_generated_in_step_3> <use variables> #
 }
 
 to find API key we will have to use following command after step 2:
 sudo docker run --rm -it -p 27228:27228 --env-file .env ghcr.io/conradludgate/spotify-auth-proxy
 But before this we will need a few things
--------------------------------------------------------------------------------------------------
-Step2: Create a developer and user account on spotify
+
+#Step2: Create a developer and user account on spotify#
 Create a dev account > click on user name on top right corner > create app > give name and title and skip website section.
 on URL section give :  http://localhost:27228/spotify_callback
 
@@ -47,8 +48,8 @@ SPOTIFY_CLIENT_ID=81462e2ed613455289793e5b8df000c3
 SPOTIFY_CLIENT_SECRET=955114cbc076493f982dbf3186e7a3df
 
 Put this details in .env file
------------------------------------------------------------------------------------------------------
-Step3: Now run the docker command to get the API key
+
+#Step3: Now run the docker command to get the API key#
 docker run --rm -it -p 27228:27228 --env-file .env ghcr.io/conradludgate/spotify-auth-proxy
 
 You have to keep it running, if you run this in backgroung you will not get API key and url to authorize
@@ -59,8 +60,8 @@ lucky@ubuntux:~/Documents/terraform/spotify$ docker run --rm -it -p 27228:27228 
 APIKey:   V0S1o4Hjhf0Wnex3--9cWeJXt_nrhI79tWM9bAi0iRyruN1_tlMp46PExYNEtjC2
 Auth URL: http://localhost:27228/authorize?token=KwxeG5Lr1CJwQmONW4iUZNgWxQmsLJG_R3_sSo5t82gQoHycf6v6SqRtmphS5Q7q
 Authorization successful
--------------------------------------------------------------------------------------------------------
-Step 4: put above api key in tfvars file and mention the var in variable.tf file
+
+#Step 4: put above api key in tfvars file and mention the var in variable.tf file#
 
 Here is how your files should look:
 <<<<<<<<<<<<<<<<<<<<<<<<  .env >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -97,8 +98,8 @@ resource "spotify_playlist" "Rock" {
 }
 
 these ids are for saddahaq and rock on!! song.
--------------------------------------------------------------------------------------------------------
-Step 5:
+
+#Step 5: Run #
 terraform init
 terraform apply
 if such problem occurs then your docker container is not running and you may have to run it again.
